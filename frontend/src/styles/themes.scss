@@ -1,0 +1,78 @@
+@mixin define-theme($theme-name, $colors) {
+  .#{$theme-name} {
+    @each $name, $value in $colors {
+      --#{$name}: #{$value};
+    }
+  }
+}
+
+$light-theme: (
+        'font-family-main': 'Roboto, sans-serif',
+        'font-family-heading': 'Montserrat, sans-serif',
+        'font-family-mono': 'Source Code Pro, monospace',
+        'background-color': #f8f9fa,
+        'chat-container-bg': #fff,
+        'message-user-bg': #DCF8C6,
+        'message-bot-bg': #eee,
+        'message-text-color': #222,
+        'input-bg': #fff,
+        'input-border': #ccc,
+        'input-text-color': #222,
+        'button-bg': #4CAF50,
+        'button-bg-hover': #367c39,
+        'button-text-color': #fff,
+        'header-bg': #4CAF50,
+        'header-text-color': #fff,
+        'border-color': #ddd,
+        'box-shadow': 0px 4px 20px rgba(0, 0, 0, 0.08),
+        'text-color': #333,
+        'text-color-secondary': #666,
+        'error-color': #e74c3c,
+        'warning-color': #f39c12,
+        'info-color': #3498db,
+        'success-color': #2ecc71,
+        'primary-color': #4CAF50,
+        'heading-color': #2c3e50,
+        'link-color': #2980b9,
+        'link-color-hover': #3498db,
+        'code-bg': rgba(0, 0, 0, 0.05),
+        'code-block-bg': rgba(0, 0, 0, 0.08),
+        'logs-panel-bg': #f0f0f0,
+);
+
+$dark-theme: (
+        'font-family-main': 'Roboto, sans-serif',
+        'font-family-heading': 'Montserrat, sans-serif',
+        'font-family-mono': 'Source Code Pro, monospace',
+        'background-color': #121212,
+        'chat-container-bg': #1e1e1e,
+        'message-user-bg': #075E54,
+        'message-bot-bg': #2a2a2a,
+        'message-text-color': #eee,
+        'input-bg': #333,
+        'input-border': #555,
+        'input-text-color': #eee,
+        'button-bg': #075E54,
+        'button-bg-hover': #0a7d6f,
+        'button-text-color': #fff,
+        'header-bg': #075E54,
+        'header-text-color': #fff,
+        'border-color': #555,
+        'box-shadow': 0px 4px 20px rgba(0, 0, 0, 0.3),
+        'text-color': #eee,
+        'text-color-secondary': #aaa,
+        'error-color': #e74c3c,
+        'warning-color': #f39c12,
+        'info-color': #3498db,
+        'success-color': #2ecc71,
+        'primary-color': #075E54,
+        'heading-color': #ecf0f1,
+        'link-color': #3498db,
+        'link-color-hover': #5dade2,
+        'code-bg': rgba(255, 255, 255, 0.1),
+        'code-block-bg': rgba(255, 255, 255, 0.05),
+        'logs-panel-bg': #2a2a2a,
+);
+
+@include define-theme('theme-light', $light-theme);
+@include define-theme('theme-dark', $dark-theme);

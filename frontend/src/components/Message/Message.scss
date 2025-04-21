@@ -1,0 +1,200 @@
+@import "../../styles/breakpoints.scss";
+
+.message {
+  margin-bottom: 15px;
+  clear: both;
+  animation: fadeIn 0.3s ease;
+
+  @include for-phone-only {
+    margin-bottom: 12px;
+  }
+
+  @include for-desktop-up {
+    margin-bottom: 20px;
+  }
+
+  .message-text {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 80%;
+    color: var(--message-text-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    line-height: 1.5;
+    transition: all 0.3s ease;
+
+    @include for-phone-only {
+      padding: 8px 12px;
+      max-width: 85%;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    @include for-desktop-up {
+      padding: 15px 20px;
+      border-radius: 18px;
+      font-size: 1.05rem;
+      max-width: 70%;
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--heading-color);
+
+      @include for-phone-only {
+        font-size: 1.1rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.6rem;
+      }
+
+      @include for-desktop-up {
+        font-size: 1.5rem;
+      }
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.6rem;
+      color: var(--heading-color);
+
+      @include for-phone-only {
+        font-size: 1rem;
+        margin-top: 0.4rem;
+        margin-bottom: 0.5rem;
+      }
+
+      @include for-desktop-up {
+        font-size: 1.3rem;
+      }
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0;
+
+      @include for-phone-only {
+        padding-left: 1.2rem;
+        margin: 0.4rem 0;
+      }
+    }
+
+    p {
+      margin: 0.5rem 0;
+
+      @include for-phone-only {
+        margin: 0.4rem 0;
+      }
+    }
+  }
+
+  &.user {
+    float: right;
+    .message-text {
+      background-color: var(--message-user-bg);
+      border-bottom-right-radius: 5px;
+      margin-left: auto;
+      transform-origin: bottom right;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+        @include for-phone-only {
+          transform: translateY(-1px);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+        }
+      }
+    }
+  }
+
+  &.bot {
+    float: left;
+    .message-text {
+      background-color: var(--message-bot-bg);
+      border-bottom-left-radius: 5px;
+      transform-origin: bottom left;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+        @include for-phone-only {
+          transform: translateY(-1px);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+        }
+      }
+
+      a {
+        color: var(--link-color);
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px dashed var(--link-color);
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: var(--link-color-hover);
+          border-bottom-style: solid;
+        }
+      }
+
+      code {
+        background-color: var(--code-bg);
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Source Code Pro', monospace;
+        font-size: 0.9em;
+
+        @include for-phone-only {
+          padding: 0.15rem 0.3rem;
+          font-size: 0.85em;
+        }
+      }
+
+      pre {
+        background-color: var(--code-block-bg);
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 0.8rem 0;
+
+        @include for-phone-only {
+          padding: 0.7rem;
+          margin: 0.6rem 0;
+          border-radius: 6px;
+        }
+
+        code {
+          background-color: transparent;
+          padding: 0;
+          border-radius: 0;
+          display: block;
+          line-height: 1.5;
+
+          @include for-phone-only {
+            line-height: 1.4;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Очистка после float
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

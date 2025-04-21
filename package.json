@@ -1,0 +1,26 @@
+{
+  "name": "neurosearchengine-full",
+  "version": "1.0.0",
+  "description": "Объединенное приложение NeuroSearchEngine с frontend и backend",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm run install:frontend && npm run install:backend",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && pip install -r requirements.txt",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && python main.py",
+    "build": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "neurosearch",
+    "react",
+    "flask",
+    "gemini"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 

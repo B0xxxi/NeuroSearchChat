@@ -1,0 +1,38 @@
+:root {
+  font-family: Roboto, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Исправление для мобильных Safari */
+@supports (-webkit-touch-callout: none) {
+  body, 
+  html, 
+  #root {
+    height: -webkit-fill-available;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+} 

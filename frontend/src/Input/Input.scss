@@ -1,0 +1,19 @@
+@supports (-webkit-touch-callout: none) {
+  // Специальные стили для iOS-устройств
+  .input-container {
+    padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
+    
+    input {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      line-height: 1.2; // Уменьшаем высоту строки для iOS
+    }
+  }
+  
+  // Дополнительные отступы для панели внизу на iOS
+  .chat-container .input-area {
+    @include for-phone-only {
+      padding-bottom: calc(20px + env(safe-area-inset-bottom, 20px));
+    }
+  }
+} 

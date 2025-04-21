@@ -1,0 +1,43 @@
+// Миксины для медиа-запросов
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+// Дополнительные миксины для конкретных случаев
+@mixin for-medium-screens {
+  @media (min-width: 768px) and (max-width: 1199px) { @content; }
+}
+
+// Миксин для ориентации устройства
+@mixin for-landscape {
+  @media (orientation: landscape) { @content; }
+}
+
+@mixin for-portrait {
+  @media (orientation: portrait) { @content; }
+}
+
+// Для ретина дисплеев 
+@mixin for-retina {
+  @media 
+  (-webkit-min-device-pixel-ratio: 2), 
+  (min-resolution: 192dpi) { 
+    @content; 
+  }
+}
