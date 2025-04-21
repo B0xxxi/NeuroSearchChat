@@ -13,8 +13,8 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone <url-репозитория>
-cd NeuroSearchEngineFull
+git clone https://github.com/B0xxxi/NeuroSearchChat.git
+cd NeuroSearchChat
 ```
 
 2. Установите зависимости:
